@@ -60,7 +60,7 @@ function ChatRoom(){
 
 
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(10);
+  const query = messagesRef.orderBy('createdAt');
 //listen to any updates in data in real time
   const [messages] = useCollectionData(query, {idField: 'id'});
   //returns array of object, each object is the message you write, and React reacts to changes in real time
